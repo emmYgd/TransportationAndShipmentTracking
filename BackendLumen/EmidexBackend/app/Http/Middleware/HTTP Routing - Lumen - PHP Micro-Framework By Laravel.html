@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://lumen.laravel.com/docs/8.x/routing#route-group-prefixes -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>HTTP Routing - Lumen - PHP Micro-Framework By Laravel</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="author" content="Taylor Otwell">
+	<meta name="description" content="Lumen - The Stunningly Fast PHP Micro-Framework By Laravel">
+	<meta name="keywords" content="lumen, laravel, php, framework, web, artisans, taylor otwell">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--[if lte IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="https://lumen.laravel.com/img/favicons/favicon-32x32.png" sizes="32x32"><script async="" src="./HTTP Routing - Lumen - PHP Micro-Framework By Laravel_files/analytics.js.download"></script><script data-dapp-detection="">!function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();</script>
+	<link rel="icon" type="image/png" href="https://lumen.laravel.com/img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="stylesheet" href="./HTTP Routing - Lumen - PHP Micro-Framework By Laravel_files/lumen.css">
+	<script src="./HTTP Routing - Lumen - PHP Micro-Framework By Laravel_files/lumen.js.download"></script>
+<style id="iconic-responsive-css" type="text/css">/* Iconic Responsive Support Styles */
+.iconic-property-fill, .iconic-property-text {stroke: none !important;}
+.iconic-property-stroke {fill: none !important;}
+svg.iconic.iconic-fluid {height:100% !important;width:100% !important;}
+svg.iconic.iconic-sm:not(.iconic-size-md):not(.iconic-size-lg), svg.iconic.iconic-size-sm{width:16px;height:16px;}
+svg.iconic.iconic-md:not(.iconic-size-sm):not(.iconic-size-lg), svg.iconic.iconic-size-md{width:32px;height:32px;}
+svg.iconic.iconic-lg:not(.iconic-size-sm):not(.iconic-size-md), svg.iconic.iconic-size-lg{width:128px;height:128px;}
+svg.iconic-sm > g.iconic-md, svg.iconic-sm > g.iconic-lg, svg.iconic-md > g.iconic-sm, svg.iconic-md > g.iconic-lg, svg.iconic-lg > g.iconic-sm, svg.iconic-lg > g.iconic-md {display: none;}
+svg.iconic.iconic-icon-sm > g.iconic-lg, svg.iconic.iconic-icon-md > g.iconic-lg {display:none;}
+svg.iconic-sm:not(.iconic-icon-md):not(.iconic-icon-lg) > g.iconic-sm, svg.iconic-md.iconic-icon-sm > g.iconic-sm, svg.iconic-lg.iconic-icon-sm > g.iconic-sm {display:inline;}
+svg.iconic-md:not(.iconic-icon-sm):not(.iconic-icon-lg) > g.iconic-md, svg.iconic-sm.iconic-icon-md > g.iconic-md, svg.iconic-lg.iconic-icon-md > g.iconic-md {display:inline;}
+svg.iconic-lg:not(.iconic-icon-sm):not(.iconic-icon-md) > g.iconic-lg, svg.iconic-sm.iconic-icon-lg > g.iconic-lg, svg.iconic-md.iconic-icon-lg > g.iconic-lg {display:inline;}</style></head>
+<body class="docs language-php scotchified" style=""><div class="scotch-panel-wrapper" style="position: relative; overflow: hidden; width: 100%;"><div class="scotch-panel-canvas" style="position: relative; height: 100%; width: 100%; transform: translate3d(0px, 0px, 0px); backface-visibility: hidden; transition: all 300ms ease 0s;">
+
+	<span class="overlay"></span>
+
+<nav class="main">
+	<div class="container">
+		<a href="https://lumen.laravel.com/" class="brand">
+			<span class="logo">
+				<svg xmlns="http://www.w3.org/2000/svg" class="iconic iconic-lightbulb" width="128" height="128" viewBox="0 0 128 128">
+  <g class="iconic-metadata">
+    <title>Lightbulb</title>
+  </g>
+  <defs>
+    <clippath id="iconic-size-lg-lightbulb-clip-0">
+      <path d="M16.583 94h33.417v2.667l-39.083 6.375-.333-6.417z"></path>
+    </clippath>
+    <clippath id="iconic-size-lg-lightbulb-clip-1">
+      <path d="M64 57l-14.5 8.25v16.75h-34.25l-1.5-16 50.25-23z"></path>
+    </clippath>
+  </defs>
+  <g data-width="64" data-height="128" class="iconic-lightbulb-lg iconic-container iconic-lg" display="inline" transform="translate(32)">
+    <path stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-screw iconic-lightbulb-screw-4 iconic-property-accent iconic-property-stroke" d="M44 122l-23.834 4.001"></path>
+    <path stroke="#000" stroke-width="4" stroke-linecap="round" class="iconic-lightbulb-screw iconic-lightbulb-screw-3 iconic-property-accent iconic-property-stroke" d="M48 112l-32 6" fill="none"></path>
+    <path stroke="#000" stroke-width="4" stroke-linecap="round" class="iconic-lightbulb-screw iconic-lightbulb-screw-2 iconic-property-accent iconic-property-stroke" d="M48 102l-32 6" fill="none"></path>
+    <path clip-path="url(#iconic-size-lg-lightbulb-clip-0)" stroke="#000" stroke-width="4" stroke-linecap="round" class="iconic-lightbulb-screw iconic-lightbulb-screw-1 iconic-property-accent iconic-property-stroke" d="M48 92.5l-32 6" fill="none"></path>
+    <path clip-path="url(#iconic-size-lg-lightbulb-clip-1)" stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-6 iconic-property-stroke" d="M60 54l-20 9v18.75" fill="none"></path>
+    <path clip-path="url(#iconic-size-lg-lightbulb-clip-1)" stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-5 iconic-property-stroke" d="M24 68v13.75" fill="none"></path>
+    <path d="M47 94h-30c-1.657 0-3.221-1.325-3.493-2.959l-1.014-6.082c-.272-1.634.85-2.959 2.507-2.959h34c1.657 0 2.779 1.325 2.507 2.959l-1.014 6.082c-.272 1.634-1.836 2.959-3.493 2.959z" class="iconic-lightbulb-base iconic-property-fill"></path>
+    <path stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-4 iconic-property-stroke" d="M60 38l-56 26" fill="none"></path>
+    <path stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-3 iconic-property-stroke" d="M60 22l-56 26" fill="none"></path>
+    <path stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-2 iconic-property-stroke" d="M60 6l-56 26" fill="none"></path>
+    <path stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-1 iconic-property-stroke" d="M30 4.114l-26 11.886" fill="none"></path>
+  </g>
+  <g data-width="16" data-height="32" class="iconic-lightbulb-md iconic-container iconic-md" display="none" transform="scale(4) translate(8)">
+    <path stroke="#000" stroke-linecap="round" class="iconic-lightbulb-screw iconic-lightbulb-screw-4 iconic-property-accent iconic-property-stroke" d="M5.5 31.5l5-1.429" fill="none"></path>
+    <path stroke="#000" stroke-linecap="round" class="iconic-lightbulb-screw iconic-lightbulb-screw-3 iconic-property-accent iconic-property-stroke" d="M4.5 29.5l7-2" fill="none"></path>
+    <path stroke="#000" stroke-linecap="round" class="iconic-lightbulb-screw iconic-lightbulb-screw-2 iconic-property-accent iconic-property-stroke" d="M4.5 27.5l7-2" fill="none"></path>
+    <path stroke="#000" stroke-linecap="round" class="iconic-lightbulb-screw iconic-lightbulb-screw-1 iconic-property-accent iconic-property-stroke" d="M4.5 25.5l7-2" fill="none"></path>
+    <path stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-5 iconic-property-stroke" d="M12.5 18.5l-2 1v3.5" fill="none"></path>
+    <path stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-4 iconic-property-stroke" d="M5.5 23v-1.5" fill="none"></path>
+    <path stroke="#000" stroke-width="3" stroke-linecap="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-3 iconic-property-stroke" d="M14.5 11.5l-13 6" fill="none"></path>
+    <path stroke="#000" stroke-width="3" stroke-linecap="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-2 iconic-property-stroke" d="M14.5 5.5l-13 6" fill="none"></path>
+    <path stroke="#000" stroke-width="3" stroke-linecap="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-1 iconic-property-stroke" d="M10.5 1.5l-9 4" fill="none"></path>
+    <path d="M11 25h-6c-.552 0-1.142-.425-1.316-.949l-.367-1.103c-.175-.524.131-.949.684-.949h8c.552 0 .858.425.684.949l-.367 1.103c-.175.524-.764.949-1.316.949z" class="iconic-lightbulb-base iconic-property-fill"></path>
+  </g>
+  <g data-width="10" data-height="16" class="iconic-lightbulb-sm iconic-container iconic-sm" display="none" transform="scale(8) translate(3)">
+    <path d="M7 14c0 1.105-.895 2-2 2s-2-.895-2-2" class="iconic-lightbulb-screw iconic-property-accent iconic-property-fill"></path>
+    <path stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-4 iconic-property-stroke" d="M8 8l-2 1v2" fill="none"></path>
+    <path stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-3 iconic-property-stroke" d="M4 10.5v.5" fill="none"></path>
+    <path stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-2 iconic-property-stroke" d="M1 8l8-4" fill="none"></path>
+    <path stroke="#000" stroke-width="2" stroke-linecap="round" class="iconic-lightbulb-coil iconic-lightbulb-coil-1 iconic-property-stroke" d="M7 1l-6 3" fill="none"></path>
+    <path d="M1.776 12.553l-.553-1.106c-.123-.247 0-.447.276-.447h7c.276 0 .4.2.276.447l-.553 1.106c-.124.247-.448.447-.724.447h-5c-.276 0-.6-.2-.724-.447z" class="iconic-lightbulb-base iconic-property-fill"></path>
+  </g>
+</svg>			</span>
+
+			Lumen
+		</a>
+
+		<div class="responsive-sidebar-nav">
+			<a href="https://lumen.laravel.com/docs/8.x/routing#" class="toggle-slide menu-link btn">☰</a>
+		</div>
+
+		<div class="switcher">
+	<div class="dropdown">
+		<button class="btn dropdown-toggle" type="button" id="version-switcher" data-toggle="dropdown" aria-expanded="true">
+            <span class="current-version">8.x</span>
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="version-switcher">
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/master/routing">Master</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/8.x/routing">8.x</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/7.x/routing">7.x</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/6.x/routing">6.x</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/5.8/routing">5.8</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/5.7/routing">5.7</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/5.6/routing">5.6</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/5.5/routing">5.5</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/5.4/routing">5.4</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/5.3/routing">5.3</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/5.2/routing">5.2</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="https://lumen.laravel.com/docs/5.1/routing">5.1</a>
+				</li>
+					</ul>
+	</div>
+</div>
+
+		<ul class="main-nav">
+			<li class="nav-docs"><a href="https://lumen.laravel.com/docs">Documentation</a></li>
+<li class="nav-laracasts"><a href="https://laracasts.com/">Laracasts</a></li>
+<li class="nav-laravel"><a href="http://laravel.com/">Laravel</a></li>
+		</ul>
+	</div>
+</nav>
+
+
+<nav id="slide-menu" class="slide-menu scotch-panel-left" role="navigation" style="top: 0px; left: -70%; width: 70%; height: 100%; position: absolute; z-index: 888888; overflow: hidden; backface-visibility: hidden; display: block;">
+
+	<ul class="slide-main-nav">
+		<li><a href="https://lumen.laravel.com/">Home</a></li>
+
+		<li class="nav-docs"><a href="https://lumen.laravel.com/docs">Documentation</a></li>
+<li class="nav-laracasts"><a href="https://laracasts.com/">Laracasts</a></li>
+<li class="nav-laravel"><a href="http://laravel.com/">Laravel</a></li>
+	</ul>
+
+	<div class="slide-docs-nav">
+		<h2>Documentation</h2>
+
+		<ul>
+<li>Prologue
+<ul>
+<li><a href="https://lumen.laravel.com/docs/8.x/releases">Release Notes</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/upgrade">Upgrade Guide</a></li>
+</ul></li>
+<li>Getting Started
+<ul>
+<li><a href="https://lumen.laravel.com/docs/8.x/installation">Installation</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/configuration">Configuration</a></li>
+</ul></li>
+<li>The Basics
+<ul>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing">Routing</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/middleware">Middleware</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/controllers">Controllers</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/requests">Requests</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/responses">Responses</a></li>
+</ul></li>
+<li>More Features
+<ul>
+<li><a href="https://lumen.laravel.com/docs/8.x/authentication">Authentication</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/authorization">Authorization</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/cache">Cache</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/database">Database</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/encryption">Encryption</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/errors">Errors &amp; Logging</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/events">Events</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/mail">Mail</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/queues">Queues</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/container">Service Container</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/providers">Service Providers</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/testing">Testing</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/validation">Validation</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/views">Views</a></li>
+</ul></li>
+</ul>
+	</div>
+
+
+</nav>
+
+<div class="docs-wrapper container">
+
+	<section class="sidebar">
+		<ul>
+<li>Prologue
+<ul>
+<li><a href="https://lumen.laravel.com/docs/8.x/releases">Release Notes</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/upgrade">Upgrade Guide</a></li>
+</ul></li>
+<li>Getting Started
+<ul>
+<li><a href="https://lumen.laravel.com/docs/8.x/installation">Installation</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/configuration">Configuration</a></li>
+</ul></li>
+<li>The Basics
+<ul>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing">Routing</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/middleware">Middleware</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/controllers">Controllers</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/requests">Requests</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/responses">Responses</a></li>
+</ul></li>
+<li>More Features
+<ul>
+<li><a href="https://lumen.laravel.com/docs/8.x/authentication">Authentication</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/authorization">Authorization</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/cache">Cache</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/database">Database</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/encryption">Encryption</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/errors">Errors &amp; Logging</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/events">Events</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/mail">Mail</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/queues">Queues</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/container">Service Container</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/providers">Service Providers</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/testing">Testing</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/validation">Validation</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/views">Views</a></li>
+</ul></li>
+</ul>
+	</section>
+
+	<article>
+		<h1>HTTP Routing</h1>
+<ul>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing#basic-routing">Basic Routing</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing#route-parameters">Route Parameters</a>
+<ul>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing#required-parameters">Required Parameters</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing#optional-parameters">Optional Parameters</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing#parameters-regular-expression-constraints">Regular Expression Constraints</a></li>
+</ul></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing#named-routes">Named Routes</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing#route-groups">Route Groups</a>
+<ul>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing#route-group-middleware">Middleware</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing#route-group-namespaces">Namespaces</a></li>
+<li><a href="https://lumen.laravel.com/docs/8.x/routing#route-group-prefixes">Route Prefixes</a></li>
+</ul></li>
+</ul>
+<p><a name="basic-routing"></a></p>
+<h2><a href="https://lumen.laravel.com/docs/8.x/routing#basic-routing">Basic Routing</a></h2>
+<p>You will define all of the routes for your application in the <code class=" language-php">routes<span class="token operator">/</span>web<span class="token punctuation">.</span>php</code> file. The most basic Lumen routes simply accept a URI and a <code class=" language-php">Closure</code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'Hello World'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">post<span class="token punctuation">(</span></span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true"> //
+</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Available Router Methods</h4>
+<p>The router allows you to register routes that respond to any HTTP verb:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">post<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">put<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">patch<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">delete<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">options<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="route-parameters"></a></p>
+<h2><a href="https://lumen.laravel.com/docs/8.x/routing#route-parameters">Route Parameters</a></h2>
+<p><a name="required-parameters"></a></p>
+<h3>Required Parameters</h3>
+<p>Of course, sometimes you will need to capture segments of the URI within your route. For example, you may need to capture a user's ID from the URL. You may do so by defining route parameters:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'user/{id}'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'User '</span><span class="token punctuation">.</span><span class="token variable">$id</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may define as many route parameters as required by your route:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'posts/{postId}/comments/{commentId}'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$postId</span><span class="token punctuation">,</span> <span class="token variable">$commentId</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true"> //
+</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Route parameters are always encased within "curly" braces. The parameters will be passed into your route's <code class=" language-php">Closure</code> when the route is executed.</p>
+<blockquote>
+<p><strong>Note:</strong> Route parameters cannot contain the <code class=" language-php"><span class="token operator">-</span></code> character. Use an underscore (<code class=" language-php">_</code>) instead.</p>
+</blockquote>
+<p><a name="optional-parameters"></a></p>
+<h3>Optional Parameters</h3>
+<p>You may define optional route parameters by enclosing part of the route URI definition in <code class=" language-php"><span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span></code>. So, for example, <code class=" language-php"><span class="token operator">/</span>foo<span class="token punctuation">[</span>bar<span class="token punctuation">]</span></code> will match both <code class=" language-php"><span class="token operator">/</span>foo</code> and <code class=" language-php"><span class="token operator">/</span>foobar</code>. Optional parameters are only supported in a trailing position of the URI. In other words, you may not place an optional parameter in the middle of a route definition:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'user[/{name}]'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$name</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token variable">$name</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="parameters-regular-expression-constraints"></a></p>
+<h3>Regular Expression Constraints</h3>
+<p>You may constrain the format of your route parameters by defining a regular expression in your route definition:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'user/{name:[A-Za-z]+}'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true"> //
+</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="named-routes"></a></p>
+<h2><a href="https://lumen.laravel.com/docs/8.x/routing#named-routes">Named Routes</a></h2>
+<p>Named routes allow the convenient generation of URLs or redirects for specific routes. You may specify a name for a route using the <code class=" language-php"><span class="token keyword">as</span></code> array key when defining the route:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'as'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'profile'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true"> //
+</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may also specify route names for controller actions:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+    <span class="token string">'as'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'profile'</span><span class="token punctuation">,</span> <span class="token string">'uses'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'UserController@showProfile'</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Generating URLs To Named Routes</h4>
+<p>Once you have assigned a name to a given route, you may use the route's name when generating URLs or redirects via the global <code class=" language-php">route</code> function:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token comment" spellcheck="true">// Generating URLs...
+</span><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">route<span class="token punctuation">(</span></span><span class="token string">'profile'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">
+// Generating Redirects...
+</span><span class="token keyword">return</span> <span class="token function">redirect<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">route<span class="token punctuation">(</span></span><span class="token string">'profile'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>If the named route defines parameters, you may pass the parameters as the second argument to the <code class=" language-php">route</code> function. The given parameters will automatically be inserted into the URL in their correct positions:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'user/{id}/profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'as'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'profile'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true"> //
+</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">route<span class="token punctuation">(</span></span><span class="token string">'profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="route-groups"></a></p>
+<h2><a href="https://lumen.laravel.com/docs/8.x/routing#route-groups">Route Groups</a></h2>
+<p>Route groups allow you to share route attributes, such as middleware or namespaces, across a large number of routes without needing to define those attributes on each individual route. Shared attributes are specified in an array format as the first parameter to the <code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">group</span></code> method.</p>
+<p>To learn more about route groups, we'll walk through several common use-cases for the feature.</p>
+<p><a name="route-group-middleware"></a></p>
+<h3>Middleware</h3>
+<p>To assign middleware to all routes within a group, you may use the <code class=" language-php">middleware</code> key in the group attribute array. Middleware will be executed in the order you define this array:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">group<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'middleware'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'auth'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$router</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true"> // Uses Auth Middleware
+</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'user/profile'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true"> // Uses Auth Middleware
+</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="route-group-namespaces"></a></p>
+<h3>Namespaces</h3>
+<p>Another common use-case for route groups is assigning the same PHP namespace to a group of controllers. You may use the <code class=" language-php"><span class="token keyword">namespace</span></code> parameter in your group attribute array to specify the namespace for all controllers within the group:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">group<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'namespace'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Admin'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$router</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true"> // Using The "App\Http\Controllers\Admin" Namespace...
+</span>
+    <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">group<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'namespace'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'User'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$router</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true"> // Using The "App\Http\Controllers\Admin\User" Namespace...
+</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="route-group-prefixes"></a></p>
+<h3>Route Prefixes</h3>
+<p>The <code class=" language-php">prefix</code> group attribute may be used to prefix each route in the group with a given URI. For example, you may want to prefix all route URIs within the group with <code class=" language-php">admin</code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">group<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'prefix'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'admin'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$router</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'users'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true"> // Matches The "/admin/users" URL
+</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may also use the <code class=" language-php">prefix</code> parameter to specify common parameters for your grouped routes:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">group<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'prefix'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'accounts/{accountId}'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$router</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$router</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'detail'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$accountId</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true"> // Matches The "/accounts/{accountId}/detail" URL
+</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	</article>
+</div>
+
+	<footer class="main">
+		<ul>
+			<li class="nav-docs"><a href="https://lumen.laravel.com/docs">Documentation</a></li>
+<li class="nav-laracasts"><a href="https://laracasts.com/">Laracasts</a></li>
+<li class="nav-laravel"><a href="http://laravel.com/">Laravel</a></li>
+		</ul>
+		<p>Laravel is a trademark of Taylor Otwell. Copyright © Taylor Otwell.</p>
+		<p class="less-significant"><a href="http://jackmcdade.com/">Design by Jack McDade.</a></p>
+	</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-23865777-5', 'auto');
+  ga('send', 'pageview');
+
+</script><p style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); margin: 0px;"></p>
+
+
+</div></div></body></html>
