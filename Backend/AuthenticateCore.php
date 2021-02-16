@@ -14,7 +14,7 @@ class AuthenticateCore
 	//use InitDbase;
 	//use ReadModel;
 
-	private $_adminPassword = "em_admin_xbZ194w28Rayc";
+	private $_adminPassword = "";
 
 
 	//setters and getters:
