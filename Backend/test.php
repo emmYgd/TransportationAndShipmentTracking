@@ -34,25 +34,25 @@ R::store($test);*/
 ?>
 */
 
-/*$bearer_string = "BEARER_STRING_EMIDEX_LOG_SERVICES@em_admin_xbZ194w28Rayc";
+/*$bearer_string = "";
 
 $bytes = str_shuffle(str_shuffle($bearer_string));
 echo $bytes;*/
 
-//echo password_hash('em_admin_xbZ194w28Rayc', PASSWORD_DEFAULT);
+//echo password_hash('', PASSWORD_DEFAULT);
 ?> 
 
 <br/>
 
 <?php  
-//echo password_hash('em_admin_xbZ194w28Rayc', PASSWORD_DEFAULT); 
+//echo password_hash('', PASSWORD_DEFAULT); 
 ?>
 
 <br/>
 
 <?php  
 
-$value1 = md5(md5('em_admin_xbZ194w28Rayc'));
+$value1 = md5(md5(''));
 
 echo $value1;
 
@@ -61,14 +61,14 @@ echo $value1;
 
 <?php
 
-$value2 = md5(md5('em_admin_xbZ194w28Rayc')); 
+$value2 = md5(md5('')); 
 
 echo $value2;
 
 ?>
 <br/>
 <?php
-$value3 = md5(md5('em_admin_xbZ194w28Rayc')); 
+$value3 = md5(md5('')); 
 
 echo $value3;
 
